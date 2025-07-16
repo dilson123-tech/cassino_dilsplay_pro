@@ -1,29 +1,18 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const imagensDisponiveis = [
-    "../assets/imagens/tigre.png",
-    "../assets/imagens/leao.png",
-    "../assets/imagens/urso.png"
-  ];
-
-  const botoesBobinas = document.querySelectorAll(".grade-bobinas img");
-  const botaoGirar = document.getElementById("btn-girar");
+  const emojis = ["🐯", "🐻", "🦁"];
+  const btnGirar = document.getElementById("btn-girar");
   const mensagem = document.getElementById("mensagem");
+  const spans = document.querySelectorAll(".linha span");
 
-  let fichas = parseInt(localStorage.getItem("fichas")) || 100;
+  let fichas = parseInt(localStorage.getItem("fichas")) || 260;
 
   const mostrarFichas = () => {
-    let fichasEl = document.querySelector(".fichas");
-    if (!fichasEl) {
-      fichasEl = document.createElement("p");
-      fichasEl.classList.add("fichas");
-      botaoGirar.insertAdjacentElement("afterend", fichasEl);
-    }
-    fichasEl.textContent = `💰 ${fichas} Fichas`;
+    document.querySelector(".fichas").textContent = `💰 ${fichas} Fichas`;
   };
 
   mostrarFichas();
 
-  botaoGirar.addEventListener("click", () => {
+  btnGirar.addEventListener("click", () => {
     if (fichas < 5) {
       mensagem.textContent = "❌ Fichas insuficientes!";
       return;
@@ -31,35 +20,32 @@ window.addEventListener("DOMContentLoaded", () => {
 
     fichas -= 5;
     mensagem.textContent = "🔄 Rodando... Boa sorte!";
-    botaoGirar.disabled = true;
+    btnGirar.disabled = true;
 
-    let contador = 0;
+    let contagem = 0;
     const intervalo = setInterval(() => {
-      botoesBobinas.forEach((img) => {
-        const sorteio = Math.floor(Math.random() * imagensDisponiveis.length);
-        img.src = imagensDisponiveis[sorteio];
-        img.alt = imagensDisponiveis[sorteio].split("/").pop().replace(".png", "");
+      spans.forEach(span => {
+        const sorteio = Math.floor(Math.random() * emojis.length);
+        span.textContent = emojis[sorteio];
       });
-
-      contador++;
-      if (contador >= 20) {
+      contagem++;
+      if (contagem >= 20) {
         clearInterval(intervalo);
 
-        const linhaMeio = document.querySelectorAll(".linha")[1];
-        const imgsLinha = linhaMeio.querySelectorAll("img");
-        const srcs = Array.from(imgsLinha).map(img => img.src);
+        const linhaDoMeio = document.querySelectorAll(".linha")[1];
+        const [a, b, c] = [...linhaDoMeio.querySelectorAll("span")].map(s => s.textContent);
 
-        if (srcs[0] === srcs[1] && srcs[1] === srcs[2]) {
-          fichas += 50;
+        if (a === b && b === c) {
           mensagem.textContent = "🎉 JACKPOT! Ganhou 50 fichas!";
+          fichas += 50;
         } else {
           mensagem.textContent = "😢 Não foi dessa vez. Tente de novo!";
         }
 
         localStorage.setItem("fichas", fichas);
         mostrarFichas();
-        botaoGirar.disabled = false;
+        btnGirar.disabled = false;
       }
-    }, 100); // 100ms entre cada giro
+    }, 100);
   });
 });
