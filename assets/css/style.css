@@ -40,11 +40,24 @@ nav a {
   margin: 20px 0;
 }
 
+/* Coloque isso no assets/css/style.css */
+
 .linha {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #222; /* fundo escuro pra realçar a borda */
+  border: 2px solid transparent; /* borda invisível até ganhar */
+  border-radius: 8px;
 }
+
+.vencedora {
+  border: 3px solid gold;
+  box-shadow: 0 0 15px gold;
+}
+
 
 .linha span {
   font-size: 2.5rem;
