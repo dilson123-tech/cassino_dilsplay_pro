@@ -48,7 +48,8 @@ nav a {
 
 .linha span {
   font-size: 2.5rem;
-  background-color: #333;
+  background-color: #fff; /* ⚪ fundo branco */
+  color: #000;             /* letras pretas (pro contraste) */
   padding: 20px;
   width: 60px;
   height: 60px;
@@ -56,8 +57,10 @@ nav a {
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
 }
+
 
 button {
   font-size: 1.2rem;
@@ -83,4 +86,33 @@ button:disabled {
   margin-top: 10px;
   font-weight: bold;
   color: #0f0;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .linha span {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.vencedora {
+  outline: 3px solid gold;
+  border-radius: 10px;
+  box-shadow: 0 0 15px gold;
+  transition: all 0.3s ease;
 }
