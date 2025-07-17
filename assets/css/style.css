@@ -1,181 +1,121 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #0d0d0d;
-  color: #b1adad;
+/* Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  background-color: #111;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url("/cassino_dilsplay_pro/assets/imagens/fundo_cassino_luxo.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
+.topo-site {
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 20px;
   text-align: center;
-  border-bottom: 2px solid gold;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
+.topo-site h1 {
+  font-size: 2rem;
   color: gold;
-  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-main {
-  padding: 20px;
-  text-align: center;
-}
-
-.tigrinho-container {
-  margin-top: 10px;
-  background-color: rgba(0, 0, 0, 0.6); /* preto translúcido */
-  backdrop-filter: blur(8px); /* efeito vidro esfumaçado */
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-  border: 1px solid rgba(255, 215, 0, 0.2);
-}
-
-.bobinas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.linha {
+.menu {
+  list-style: none;
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin: 10px 0;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.linha img {
-  width: 80px;
-  height: 80px;
+.menu li a {
+  text-decoration: none;
+  color: white;
+  background-color: darkred;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-/* 💫 Animação de rotação */
-img.girando {
-  animation: spin 0.3s linear infinite;
+.menu li a:hover {
+  background-color: crimson;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-select,
-button {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 6px;
-  border: none;
-  font-size: 16px;
-}
-
-button {
-  background-color: gold;
-  color: #000;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ffd700;
+/* Banner */
+.area-banner {
+  text-align: center;
+  margin: 20px 0;
 }
 
 .banner-promocional {
-  width: 100%;
-  max-height: 200px;
-  object-fit: contain;
+  max-width: 90%;
+  height: auto;
   border-radius: 12px;
-  margin: 20px 0;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 20px black;
 }
 
-
-footer {
-  background-color: #111;
-  color: #bcb6b6;
+/* Conteúdo Central */
+.area-bemvindo {
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  border-top: 2px solid gold;
+  padding: 30px 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 20px auto;
+  max-width: 700px;
+  border-radius: 12px;
 }
-.vencedora {
-  border: 3px solid gold;
+
+.area-bemvindo h2 {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.area-bemvindo p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.botao-jogar {
+  background-color: green;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
   border-radius: 10px;
-  box-shadow: 0 0 25px gold;
-  animation: brilho 1s ease-in-out infinite alternate;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes brilho {
-  from {
-    box-shadow: 0 0 5px gold;
-    transform: scale(1);
-  }
-  to {
-    box-shadow: 0 0 25px gold;
-    transform: scale(1.05);
-  }
+.botao-jogar:hover {
+  background-color: limegreen;
 }
-body {
-  font-family: Arial, sans-serif;
-  background-image: url("/cassino_dilsplay_pro/assets/imagens/fundo_cassino_luxo.jpg");
 
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  color: #d2742c;
-  margin: 0;
-  padding: 0;
+/* Rodapé */
+.rodape {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #ccc;
 }
-@media screen and (max-width: 768px) {
-  body {
-    font-size: 14px;
-    padding: 10px;
-  }
 
-  .jogo {
+/* Responsivo */
+@media (max-width: 768px) {
+  .menu {
     flex-direction: column;
-    align-items: center;
+    gap: 5px;
   }
 
-  .linha {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .linha img {
-    width: 60px;
-    height: auto;
-    margin: 5px;
+  .area-bemvindo {
+    margin: 10px;
   }
 
   .banner-promocional {
     width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-
-  button, select {
-    width: 100%;
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  .fichas, .acumulado, .mensagem-info {
-    text-align: center;
-    font-size: 16px;
   }
 }
-
-
-
