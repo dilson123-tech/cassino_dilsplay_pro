@@ -127,7 +127,8 @@ footer {
 }
 body {
   font-family: Arial, sans-serif;
-  background-image: url("../imagens/fundo_cassino_luxo.jpg");
+  background-image: url("/cassino_dilsplay_pro/assets/imagens/fundo_cassino_luxo.jpg");
+
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
