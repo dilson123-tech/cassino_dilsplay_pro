@@ -119,3 +119,39 @@ body {
     width: 100%;
   }
 }
+.linha {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.linha img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.bobinas-container {
+  background-color: rgba(0, 0, 0, 0.4); /* fundo transparente pra aparecer o fundo */
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.banner-promocional {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
