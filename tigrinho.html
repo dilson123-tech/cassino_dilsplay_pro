@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tigrinho da Sorte — DilsPlay PRO</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎰 Cassino DilsPlay PRO</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">🏠 Início</a></li>
+        <li><a href="tigrinho.html">🐯 Tigrinho da Sorte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="tigrinho-container">
+
+      <!-- ✅ Banner agora está aqui dentro da seção principal -->
+      <img class="banner-promocional" src="./assets/imagens/banner_promocional_dilsplay.png" alt="Promoção DilsPlay">
+
+      <!-- Controles do jogo -->
+      <div class="bobinas">
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+      </div>
+
+      <label for="valor-aposta">💵 Valor da Aposta:</label>
+      <select id="valor-aposta">
+        <option value="1">R$ 1</option>
+        <option value="2">R$ 2</option>
+        <option value="5">R$ 5</option>
+        <option value="10">R$ 10</option>
+      </select>
+
+      <button id="btn-girar">🎰 Girar</button>
+      <p id="mensagem" class="mensagem-info">🔄 Rodando... Boa sorte!</p>
+      <p class="fichas">💰 Saldo: R$ 100.00</p>
+      <p class="acumulado">🏆 Prêmio Acumulado: R$ 500.00</p>
+
+      <button id="resetar-jogo">🔄 Resetar Jogo</button>
+      <button id="forcar-jackpot">💥 Forçar Jackpot</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cassino DilsPlay PRO. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="./js/tigrinho.js"></script>
+</body>
+</html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🐯 Tigrinho da Sorte</title>
-  <link rel="stylesheet" href="assets/css/style.css?v=3">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎰 DilsPlay PRO</title>
+  <!-- Corrigido: subir um nível até a raiz para acessar style.css -->
+  <link rel="stylesheet" href="../assets/css/style.css?v=4" />
 </head>
 <body>
   <header>
@@ -12,17 +13,25 @@
     <nav>
       <ul>
         <li><a href="index.html">🏠 Início</a></li>
-        <li><a href="jogos/tigrinho.html">🐯 Tigrinho</a></li>
+        <li><a href="tigrinho.html">Tigrinho</a></li>
         <li><a href="#">🎡 Roleta</a></li>
         <li><a href="#">⚽ Apostas Futebol</a></li>
-        <li><a href="#">💳 Comprar Fichas</a></li>
+        <li><a href="#">💳 Comprar Créditos</a></li>
         <li><a href="#">🏆 Ranking</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <div class="tigrinho-container">
+    <!-- Banner promocional corrigido -->
+    <img
+      src="../assets/imagens/banner_promocional_dilsplay.png"
+      alt="Banner DilsPlay"
+      class="banner-promocional"
+    />
+
+    <!-- Container do jogo Tigrinho -->
+    <section class="tigrinho-container">
       <h2>🐯 Tigrinho da Sorte</h2>
       <p class="subtexto">
         🎲 Clique no botão abaixo para girar as bobinas e testar sua sorte com os animais!
@@ -30,36 +39,56 @@
 
       <div class="bobinas">
         <div class="linha">
-          <span>🐯</span>
-          <span>🐻</span>
-          <span>🦁</span>
+          <img src="../assets/imagens/tigre.png" alt="tigre" />
+          <img src="../assets/imagens/leao.png" alt="leao" />
+          <img src="../assets/imagens/urso.png" alt="urso" />
+          <img src="../assets/imagens/lobo.png" alt="lobo" />
         </div>
         <div class="linha">
-          <span>🦁</span>
-          <span>🐯</span>
-          <span>🐻</span>
+          <img src="../assets/imagens/urso.png" alt="urso" />
+          <img src="../assets/imagens/leao.png" alt="leao" />
+          <img src="../assets/imagens/lobo.png" alt="lobo" />
+          <img src="../assets/imagens/tigre.png" alt="tigre" />
         </div>
         <div class="linha">
-          <span>🐻</span>
-          <span>🦁</span>
-          <span>🐯</span>
+          <img src="../assets/imagens/leao.png" alt="leao" />
+          <img src="../assets/imagens/tigre.png" alt="tigre" />
+          <img src="../assets/imagens/urso.png" alt="urso" />
+          <img src="../assets/imagens/lobo.png" alt="lobo" />
         </div>
       </div>
 
+      <label for="valor-aposta">💸 Valor da Aposta:</label>
+      <select id="valor-aposta">
+        <option value="1">R$ 1,00</option>
+        <option value="2">R$ 2,00</option>
+        <option value="3">R$ 3,00</option>
+        <option value="4">R$ 4,00</option>
+        <option value="5">R$ 5,00</option>
+      </select>
+
       <button id="btn-girar">🎰 Girar</button>
+      <p id="mensagem" class="mensagem-info">🔄 Rodando... Boa sorte!</p>
+      <p class="fichas">💰 Saldo: R$ 100.00</p>
+      <p class="acumulado">🏆 Prêmio Acumulado: R$ 500.00</p>
+      <button id="resetar-jogo">🔄 Resetar Jogo</button>
+    </section>
+    
 
-      <p id="mensagem" class="mensagem-info">
-        🔄 Rodando... Boa sorte!
-      </p>
-
-      <p class="fichas">💰 260 Fichas</p>
-    </div>
   </main>
 
   <footer>
     <p>⚠️ Plataforma fictícia para fins educacionais.</p>
   </footer>
 
-  <script src="js/tigrinho.js"></script>
+  <!-- Botão secreto para testes de JACKPOT -->
+  <button id="forcar-jackpot" style="display: none;">💥 Forçar Jackpot (dev)</button>
+
+  <!-- Corrigido: subir para acessar o JS corretamente -->
+  <script src="../js/tigrinho.js"></script>
+  <!-- Sons do jogo -->
+<audio id="som-girar" src="../assets/sounds/girar.mp3"></audio>
+<audio id="som-vitoria" src="../assets/sounds/vitoria.mp3"></audio>
+
 </body>
 </html>
