@@ -1,60 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tigrinho da Sorte — DilsPlay PRO</title>
-  <link rel="stylesheet" href="/cassino_dilsplay_pro/assets/css/style.css?v=4" />
-
+  <title>🐯 Tigrinho da Sorte</title>
+  <link rel="stylesheet" href="/cassino_dilsplay_pro/assets/css/style.css" />
+  <script src="/cassino_dilsplay_pro/js/tigrinho.js" defer></script>
 </head>
+
 <body>
+  <!-- Imagens e sons pré-carregados -->
+  <img src="/cassino_dilsplay_pro/assets/imagens/tigre.png" alt="tigre" style="display:none;" />
+  <audio id="som-girar" src="/cassino_dilsplay_pro/assets/sounds/girar.mp3"></audio>
+  <audio id="som-vitoria" src="/cassino_dilsplay_pro/assets/sounds/vitoria.mp3"></audio>
+
   <header>
-    <h1>🎰 Cassino DilsPlay PRO</h1>
+    <h1>🐯 Tigrinho da Sorte</h1>
     <nav>
       <ul>
-        <li><a href="index.html">🏠 Início</a></li>
-        <li><a href="tigrinho.html">🐯 Tigrinho da Sorte</a></li>
+        <li><a href="/cassino_dilsplay_pro/index.html">🏠 Início</a></li>
       </ul>
     </nav>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   </header>
 
   <main>
-    <section class="tigrinho-container">
-
-      <!-- ✅ Banner agora está aqui dentro da seção principal -->
-      <img class="banner-promocional" src="./assets/imagens/banner_promocional_dilsplay.png" alt="Promoção DilsPlay">
-
-      <!-- Controles do jogo -->
-      <div class="bobinas">
-        <div class="linha"></div>
-        <div class="linha"></div>
-        <div class="linha"></div>
+    <section class="slot-machine">
+      <div class="linha linha-1">
+        <img src="/cassino_dilsplay_pro/assets/imagens/tigre.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/leao.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/urso.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/lobo.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/tigre.png" alt="animal" class="girando">
       </div>
 
-      <label for="valor-aposta">💵 Valor da Aposta:</label>
+      <div class="linha linha-2">
+        <img src="/cassino_dilsplay_pro/assets/imagens/urso.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/leao.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/lobo.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/tigre.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/leao.png" alt="animal" class="girando">
+      </div>
+
+      <div class="linha linha-3">
+        <img src="/cassino_dilsplay_pro/assets/imagens/leao.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/tigre.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/urso.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/lobo.png" alt="animal" class="girando">
+        <img src="/cassino_dilsplay_pro/assets/imagens/tigre.png" alt="animal" class="girando">
+      </div>
+    </section>
+
+    <section class="painel">
+      <label for="valor-aposta">💸 Valor da Aposta:</label>
       <select id="valor-aposta">
-        <option value="1">R$ 1</option>
-        <option value="2">R$ 2</option>
-        <option value="5">R$ 5</option>
-        <option value="10">R$ 10</option>
+        <option value="1">R$ 1,00</option>
+        <option value="2">R$ 2,00</option>
+        <option value="5">R$ 5,00</option>
+        <option value="10">R$ 10,00</option>
       </select>
 
       <button id="btn-girar">🎰 Girar</button>
       <p id="mensagem" class="mensagem-info">🔄 Rodando... Boa sorte!</p>
-      <p class="fichas">💰 Saldo: R$ 100.00</p>
-      <p class="acumulado">🏆 Prêmio Acumulado: R$ 500.00</p>
-
+      <p class="fichas">💰 Saldo: R$ 10.00</p>
+      <p class="acumulado">🏆 Prêmio Acumulado: R$ 50.00</p>
       <button id="resetar-jogo">🔄 Resetar Jogo</button>
-      <button id="forcar-jackpot">💥 Forçar Jackpot</button>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Cassino DilsPlay PRO. Todos os direitos reservados.</p>
+    <p>⚠️ Plataforma fictícia para fins educacionais. Nenhum valor real é utilizado.</p>
   </footer>
-
-  <script src="./js/tigrinho.js"></script>
 </body>
 </html>
